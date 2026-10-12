@@ -77,7 +77,7 @@ def balances(db):
 
 # ---------------------------------------------------------------- Sarvam APIs
 def key():
-    k = st.session_state.get("api_key") or os.getenv("SARVAM_API_KEY", "")
+    k = (st.session_state.get("api_key") or os.getenv("SARVAM_API_KEY", "")).strip()
     if not k:
         st.error("Add your Sarvam API key in the sidebar first.")
         st.stop()
